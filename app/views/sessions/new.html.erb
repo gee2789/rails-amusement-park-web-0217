@@ -1,0 +1,11 @@
+<h1> Give us a username to login </h1>
+<% if flash[:error] %>
+<%= flash[:error] %>
+<%end%>
+<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+  <%= label_tag 'Username', 'Username' %>
+  <%= text_field_tag 'user[name]' %>
+  <%= label_tag 'password', 'Password' %>
+  <%= password_field_tag 'user[password]' %>
+  <input type = submit value='Sign In'>
+<% end %>
